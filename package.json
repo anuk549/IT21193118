@@ -1,0 +1,12 @@
+{
+  "name": "it3040-assignment1-swifttranslator-tests",
+  "version": "1.0.0",
+  "description": "Playwright tests for IT3040 Assignment 1 (Singlish -> Sinhala)",
+  "scripts": {
+    "test": "npx playwright test --reporter=list",
+    "test:headed": "npx playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.37.0"
+  }
+}
