@@ -1,12 +1,14 @@
 # IT21193118
+
 # IT3040 - Assignment 1: SwiftTranslator Automated Testing
 
+**Website**: https://github.com/anuk549/IT21193118
 Automated Playwright test suite for testing the SwiftTranslator website (Singlish to Sinhala transliteration).
 
 ## Overview
 
 - **24 Positive Functional Tests** - Correct transliteration scenarios
-- **10 Negative Functional Tests** - Error handling scenarios  
+- **10 Negative Functional Tests** - Error handling scenarios
 - **1 UI Test** - Real-time output updates
 - **Total: 35 test cases**
 
@@ -18,6 +20,7 @@ Automated Playwright test suite for testing the SwiftTranslator website (Singlis
    - Download from [nodejs.org](https://nodejs.org/)
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
@@ -30,11 +33,13 @@ Automated Playwright test suite for testing the SwiftTranslator website (Singlis
 ## Running Tests
 
 **Headless mode** (no browser window):
+
 ```bash
 npm test
 ```
 
 **Headed mode** (visible browser, for debugging):
+
 ```bash
 npm run test:headed
 ```
@@ -42,6 +47,7 @@ npm run test:headed
 ## Viewing Test Reports
 
 After running tests, view the HTML report:
+
 ```bash
 npx playwright show-report
 ```
@@ -62,6 +68,7 @@ Or open `playwright-report/index.html` directly in your browser.
 ## Test Output
 
 Each test logs:
+
 - Test Case ID
 - Input text
 - Actual output (Sinhala text)
