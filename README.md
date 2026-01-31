@@ -2,7 +2,7 @@
 
 # IT3040 - Assignment 1: SwiftTranslator Automated Testing
 
-**Website**: https://github.com/anuk549/IT21193118
+**Github**: https://github.com/anuk549/IT21193118
 Automated Playwright test suite for testing the SwiftTranslator website (Singlish to Sinhala transliteration).
 
 ## Overview
