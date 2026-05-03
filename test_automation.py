@@ -14,7 +14,6 @@ TESTS_DIR = ROOT_DIR / "test_automation"
 
 DEFAULT_EXCEL_CANDIDATES = [
     str(TESTS_DIR / "Assignment 1 - Test cases.xlsx"),
-    str(TESTS_DIR / "IT21193118.xlsx"),
 ]
 
 DEFAULT_SHEET_NAME = " Test cases"
