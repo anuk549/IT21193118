@@ -13,7 +13,7 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 TESTS_DIR = ROOT_DIR / "test_automation"
 
 DEFAULT_EXCEL_CANDIDATES = [
-    str(TESTS_DIR / "Assignment 1 - Test cases.xlsx"),
+    str(TESTS_DIR / "IT21193118.xlsx"),
 ]
 
 DEFAULT_SHEET_NAME = " Test cases"
@@ -169,24 +169,36 @@ def _find_column_index(header_values: list, requested_name: str | None, candidat
         if n and n not in norm_to_index:
             norm_to_index[n] = i
 
-    def match(name: str) -> int | None:
+    def exact_match(name: str) -> int | None:
         n = _normalize_header(name)
         if not n:
             return None
         if n in norm_to_index:
             return norm_to_index[n]
+        return None
+
+    def fuzzy_match(name: str) -> int | None:
+        n = _normalize_header(name)
+        if not n:
+            return None
         for i, v in indexed:
-            if n in _normalize_header(v) or _normalize_header(v) in n:
+            header_norm = _normalize_header(v)
+            if n in header_norm or header_norm in n:
                 return i
         return None
 
     if requested_name:
-        found = match(requested_name)
+        found = exact_match(requested_name) or fuzzy_match(requested_name)
         if found:
             return found
 
     for c in candidates:
-        found = match(c)
+        found = exact_match(c)
+        if found:
+            return found
+
+    for c in candidates:
+        found = fuzzy_match(c)
         if found:
             return found
 
